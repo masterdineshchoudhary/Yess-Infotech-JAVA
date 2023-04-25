@@ -1,0 +1,32 @@
+JSP is used to create a web app just like servlet. It can be an extension to servlet because it provides more functionality than servlet such as JSTL tags, ESL , etc
+A JSP page contains of HTML tags and JSP tags
+JSP pages are easier to maintain beacuse we can separate designing and development
+
+Scripting Elements - provides the ability to insert java code inside JSP page. 
+There are 3 types if scripting elemets:
+1 Scriplet tag - used to execute the java source code
+2 expression tag - used to print the value of variables and method
+3 declaration tag - used to declare variables and methods
+
+IMPLICIT Objects:
+there are 9 implicit objects and there objects are created by the web container that are available to all the jsp pages
+out(JSPWriter)
+request(HTTPServletResponse)
+config(ServletConfig)
+application(ServletContext)
+session(HTTPSession)
+pageContext(PageContext)
+page(object)
+exception(Throwable)
+
+4 type of scope 
+page, request, session, application
+
+JSP Directives
+1. page directive: <%@ page attributes="value" %> (attributes= import, content type, info, IsElIgnored )
+2. include directive: 
+3. taglib directive: taglib- used to define the tag library which contains many tags for exmaple JSTL
+	<%@ taglib url="library path" prefix="">
+	JSTL represents a set of tags to simplify the JSP development
+	
+	type of tags : core tags, function tags , sql tags 
