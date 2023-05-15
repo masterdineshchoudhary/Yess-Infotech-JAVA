@@ -35,11 +35,19 @@ public class Utility {
 //		customerDao.addCustomer(4, "Pratik", "Kothrud", 19);
 		
 //		getting a list of all customers from database
-		System.out.println("Getting a list of all customers from database");
-		List<Customer> allCustomers = customerDao.getAllCustomer();
+//		System.out.println("Getting a list of all customers from database");
+//		List<Customer> allCustomers = customerDao.getAllCustomer();
+//		for (Customer customer : allCustomers) {
+//			System.out.println("id:" + customer.getId() + ", name:"+customer.getName()+", address:"+customer.getAddress()+", age:"+customer.getAge());
+//		}
+		
+		// RowMapper getting a list of all customers from database
+		System.out.println("Row Mapper : Getting a list of all customers from database");
+		List<Customer> allCustomers = customerDao.showAllCustomer();
 		for (Customer customer : allCustomers) {
 			System.out.println("id:" + customer.getId() + ", name:"+customer.getName()+", address:"+customer.getAddress()+", age:"+customer.getAge());
 		}
+		
 		
 //		Updating a Customer 
 //		System.out.println("Updating a Customer");
@@ -61,8 +69,8 @@ public class Utility {
 //		customerDao.deleteCustomer(cid);
 		
 //		Extracting a count of all the cutomers
-		System.out.println("count of all the cutomers");
-		System.out.println("Total : " + customerDao.getCustomerCount());
+//		System.out.println("count of all the cutomers");
+//		System.out.println("Total : " + customerDao.getCustomerCount());
 	}
 	
 }

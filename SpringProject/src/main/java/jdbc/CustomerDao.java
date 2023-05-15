@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.jdbc.core.RowMapper;
 
 public class CustomerDao {
 	
@@ -59,21 +60,38 @@ public class CustomerDao {
 		jdbcTemplate.execute(query);
 	}
 	
+	// ResultSetExtractor & RowMapper used to fetch records from the database using the query() method of JdbcTemplate class
+	// ResultSetExtractor accepts a ResultSet and returns the list.
 	// getting a list of all customers from database
-	public List<Customer> getAllCustomer() {
+//	public List<Customer> getAllCustomer() {
+//		String query = "select * from customer";
+//		return jdbcTemplate.query(query, new ResultSetExtractor<List<Customer>>() {
+//			public List<Customer> extractData(ResultSet rs) throws SQLException, DataAccessException {
+//				List<Customer> customers = new ArrayList<Customer>();
+//				while (rs.next()) {
+//					Customer customer = new Customer();
+//					customer.setId(rs.getInt("id"));
+//					customer.setName(rs.getString("name"));
+//					customer.setAddress(rs.getString("address"));
+//					customer.setAge(rs.getInt("age"));
+//					customers.add(customer);
+//				}
+//				return customers;
+//			}
+//		});
+//	}
+	
+	// RowMapper getting a list of all customers from database
+	public List<Customer> showAllCustomer() {
 		String query = "select * from customer";
-		return jdbcTemplate.query(query, new ResultSetExtractor<List<Customer>>() {
-			public List<Customer> extractData(ResultSet rs) throws SQLException, DataAccessException {
-				List<Customer> customers = new ArrayList<Customer>();
-				while (rs.next()) {
-					Customer customer = new Customer();
-					customer.setId(rs.getInt("id"));
-					customer.setName(rs.getString("name"));
-					customer.setAddress(rs.getString("address"));
-					customer.setAge(rs.getInt("age"));
-					customers.add(customer);
-				}
-				return customers;
+		return jdbcTemplate.query(query, new RowMapper<Customer>() {
+			public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Customer customer = new Customer();
+				customer.setId(rs.getInt(1));
+				customer.setName(rs.getString(2));
+				customer.setAddress(rs.getString(3));
+				customer.setAge(rs.getInt(4));
+				return customer;
 			}
 		});
 	}
