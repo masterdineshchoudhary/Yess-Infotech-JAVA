@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+         
+<!--  
+	<bean class="collection.CompanyList" id="CompanyBean">
+		<property name="cName" value="TCS"></property>
+		<property name="employees">
+		<list>
+			<bean class="collection.Employee">
+				<property name="name" value="Dinesh"></property>
+				<property name="salary" value="10500"></property>
+			</bean>
+			<bean class="collection.Employee">
+				<property name="name" value="Rohit"></property>
+				<property name="salary" value="1200"></property>
+			</bean>
+			<bean class="collection.Employee">
+				<property name="name" value="Neha"></property>
+				<property name="salary" value="16500"></property>
+			</bean>
+		</list>
+		</property>
+	</bean>
+-->
+<!--  
+			<bean class="collection.Employee" id="e1">
+				<property name="name" value="Dinesh"></property>
+				<property name="salary" value="10500"></property>
+			</bean>
+			<bean class="collection.Employee" id="e2">
+				<property name="name" value="Rohit"></property>
+				<property name="salary" value="1200"></property>
+			</bean>
+			<bean class="collection.Employee" id="e3">
+				<property name="name" value="Dinesh"></property>
+				<property name="salary" value="10500"></property>
+			</bean>
+	<bean class="collection.CompanySet" id="CompanyBean">
+		<property name="cName" value="TCS"></property>
+		<property name="employees">
+		<set>
+			<ref bean="e1"/>
+			<ref bean="e2"/>
+			<ref bean="e1"/>
+		</set>
+		</property>
+	</bean>
+-->
+<!-- 
+	<bean class="collection.CompanyMap" id="CompanyBean">
+		<property name="cName" value="TCS"></property>
+		<property name="employees">
+			<map>
+				<entry key="1" value-ref="e1"></entry>
+				<entry key="2" value-ref="e2"></entry>
+				<entry key="3" value-ref="e2"></entry>
+			</map>
+		</property>
+	</bean>
+-->	
+
+<!--  
+	<bean id="e1" class="array.Engine">
+		<property name="modelYear" value="2021"></property>
+	</bean>
+	<bean id="e2" class="array.Engine">
+		<property name="modelYear" value="2022"></property>
+	</bean>
+	<bean id="e3" class="array.Engine">
+		<property name="modelYear" value="2023"></property>
+	</bean>
+	<bean id="c" class="array.Car">
+		<property name="carName">
+			<array>
+				<value>Audi</value>
+				<value>Mercedes</value>
+				<value>BMW</value>
+			</array>
+		</property>
+		<property name="engine">
+			<array>
+				<ref bean="e1"></ref>
+				<ref bean="e2"></ref>
+				<ref bean="e3"></ref>
+			</array>
+		</property>
+	</bean>
+-->
+	<bean id="db" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost/spring" />
+        <property name="username" value="root" />
+        <property name="password" value="dinesh123" /> 
+   </bean>
+   <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+   		<property name="dataSource" ref="db"></property>
+   </bean>
+   <bean id="cdao" class="jdbc.CustomerDao">
+   		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+   </bean>
+
+
+</beans>         

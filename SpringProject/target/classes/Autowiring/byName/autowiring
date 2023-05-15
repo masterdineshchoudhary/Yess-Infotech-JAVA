@@ -1,0 +1,21 @@
+autowiring feat of spring framework enables us to inject the object dependency impplicitly.
+it internally uses setter or constructor injection
+autowiring cannot be used to inject primitve and string values.
+it works with refrence only
+Types:
+ XML
+ 
+adv : 
+it requires less code because we don't need to write the code to inject the dependency implicity
+autowiring mode : 
+no -> default autowiring mode
+byName -> byName Autowiring mode injects the dependency according to the name of the bean
+		in such case, property name & bean name must be same
+		it internally uses setter method
+byType -> according to the type, in such case propety name & bean name may not be the same, it internally uses setter method
+constructor -> it injects the dependency by calling the contructor of the class
+autoDetect -> it is deprecated since spring 3
+
+
+
+Annotation Based : 

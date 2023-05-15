@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    
+    <!-- CONFIGURATION FILE -->
+    
+    <context:annotation-config/>
+		<bean class="Autowiring.annotation.Address"> 
+			<property name="street" value="51, Blue Park"></property> 
+			<property name="city" value="Pune"></property> 
+			<property name="state" value="Maharashtra"></property> 
+			<property name="country" value="India"></property> 
+		</bean> 
+		<bean class="Autowiring.annotation.Employee" name="employee" > 
+			<property name="id" value="106"></property> 
+			<property name="name" value="Rohit Sutar"></property> 
+		</bean>
+
+</beans>   

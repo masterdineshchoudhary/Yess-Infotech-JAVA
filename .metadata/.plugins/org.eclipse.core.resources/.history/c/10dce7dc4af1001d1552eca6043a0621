@@ -1,0 +1,28 @@
+package jdbc;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class CustomerDao {
+	String tableName;
+	private JdbcTemplate jdbcTemplate;
+	public String getTableName() {
+		return tableName;
+	}
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+	}
+	public JdbcTemplate getJdbcTemplate() {
+		return jdbcTemplate;
+	}
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	
+	// creating a table
+	public void createTable() {
+		String query = "create table customer(id int, name varchar(40), address varchar(40), age int)";
+		jdbcTemplate.execute(query);
+	}
+	
+
+}

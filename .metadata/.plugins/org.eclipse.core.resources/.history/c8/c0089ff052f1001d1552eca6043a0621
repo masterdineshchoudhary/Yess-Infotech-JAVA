@@ -1,0 +1,30 @@
+package jdbc;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Utility {
+	public static void main(String[] args) {
+		
+	
+		ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+		CustomerDao customerDao = context.getBean("cdao",CustomerDao.class);
+//		System.out.println("creating a table");
+//		customerDao.createTable();
+//		System.out.println("inserting data");
+//		customerDao.insertData();
+		
+//		Adding a customer
+		System.out.println("Adding a Customer");
+		customerDao.addCustomer(1, "Dinesh", "Pune", 22);
+		customerDao.addCustomer(2, "Rohit", "Manjri", 21);
+		customerDao.addCustomer(3, "Mayur", "Hadapsar", 23);
+		customerDao.addCustomer(4, "Pratik", "Kothrud", 19);
+		
+//		System.out.println("updating data");
+//		customerDao.updateData();
+//		System.out.println("deleting data");
+//		customerDao.deleteData();
+	}
+	
+}

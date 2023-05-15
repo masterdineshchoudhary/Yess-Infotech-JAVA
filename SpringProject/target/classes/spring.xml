@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean class="com.spring.SpringProject.Hello" name="hello"> <property 
+		name="msg" value="this is sring framework"></property> </bean> <bean name="vehicle" 
+		class="com.vehicle.Bike" ></bean> -->
+
+	<!-- <bean id="address" class="DIwithSetters.Address"> <property name="addressline" 
+		value="51, Green Park"></property> <property name="city" value="Pune"></property> 
+		<property name="state" value="Maharashtra"></property> <property name="country" 
+		value="India"></property> </bean> <bean id="emp" class="DIwithSetters.Employee"> 
+		<property name="id" value="101"></property> <property name="name" value="Dinesh 
+		Choudhary"></property> <property name="address" ref="address"></property> 
+		</bean> -->
+
+	<!-- <bean id="add" class="DIwithConstructors.Address"> <constructor-arg 
+		value="51, Green Park"></constructor-arg> <constructor-arg value="Pune"></constructor-arg> 
+		<constructor-arg value="Maharashtra"></constructor-arg> <constructor-arg 
+		value="India"></constructor-arg> </bean> <bean id="emp" class="DIwithConstructors.Employee"> 
+		<constructor-arg value="102" type="int"></constructor-arg> <constructor-arg 
+		value="Dinesh Choudhary"></constructor-arg> <constructor-arg> <ref bean="add" 
+		/> </constructor-arg> </bean> -->
+	<!-- <bean name="address" class="autowiring.Address"> <property name="street" 
+		value="51, Green Park"></property> <property name="city" value="Pune"></property> 
+		<property name="state" value="Maharashtra"></property> <property name="country" 
+		value="India"></property> </bean> <bean name="employee" class="autowiring.Employee" 
+		autowire="byName"> <property name="id" value="105"></property> <property 
+		name="name" value="Dinesh Choudhary"></property> </bean> -->
+	<!-- <bean name="emp" class="autowiring.Employee"> <property name="id" value="105"></property> 
+		<property name="name" value="Dinesh Choudhary"></property> <property name="address" 
+		ref="address"></property> </bean> -->
+
+<!-- 
+	<bean name="add" class="Autowiring.byType.Address"> 
+		<property name="street" value="51, Green Park"></property> 
+		<property name="city" value="Pune"></property> 
+		<property name="state" value="Maharashtra"></property> 
+		<property name="country" value="India"></property> 
+	</bean> 
+	<bean name="employee" class="Autowiring.byType.Employee" autowire="byType"> 
+		<property name="id" value="105"></property> 
+		<property name="name" value="Dinesh Choudhary"></property> 
+	</bean>
+-->
+ 
+	<bean name="address" class="Autowiring.constructor.Address"> 
+		<property name="street" value="51, Green Park"></property> 
+		<property name="city" value="Pune"></property> 
+		<property name="state" value="Maharashtra"></property> 
+		<property name="country" value="India"></property> 
+	</bean> 
+	<bean name="employee" class="Autowiring.constructor.Employee" autowire="constructor"> 
+		<property name="id" value="105"></property> 
+		<property name="name" value="Dinesh Choudhary"></property> 
+	</bean>
+
+</beans>   

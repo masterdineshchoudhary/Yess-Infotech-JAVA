@@ -1,0 +1,30 @@
+JDBC : Java Database Connectivity
+	JDBC is Java API which helps java program to connect with the database
+	JDBC Driver - converts JDBC specific call into database specific call
+	
+	Types :
+		Type 1 driver : JDBC-ODBC driver
+		Type 2 driver : Native driver
+		Type 3 driver : Native Protocol driver
+		Type 4 driver : Thin driver
+		
+	JDBC follows 5 steps to connect to the database
+		1. Register the Driver class with Driver Manager class using forName() method of class class
+		2. Create Connection - using getConnection() method of Driver Manager class
+		3. Create Statement - using createStatement() method of Connection class
+		4. Execute query - executeQuery() method will be called on Statement object - returns an ResultSetInterface object
+		
+		// (I) Connection con = DriverManager.getConnection(); -> returns connection (con)
+		// (I) Statement s = con.createStatement();
+		// (I) ResultSet rs = s.executeQuery("Select * from emp");
+		
+		ResultSet will create an exact copy of table, but will replace col names by its data types
+		
+	
+	Using JDBC, we can perform CRUD operations :
+		1. Create
+		2. Read
+		3. Update
+		4. Delete
+		
+		

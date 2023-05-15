@@ -1,0 +1,16 @@
+package jdbc;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Utility {
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+		CustomerDao customerDao = context.getBean("cdao",CustomerDao.class);
+		System.out.println("creating a table");
+		customerDao.createTable();
+		customerDao.insertData();
+		customerDao.updateData();
+		customerDao.deleteData();
+	}
+}

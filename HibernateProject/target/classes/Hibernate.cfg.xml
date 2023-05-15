@@ -1,0 +1,43 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+	<property name="connection.url">jdbc:mysql://localhost/myhiber</property>
+	<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+	<property name="connection.username">root</property>
+	<property name="connection.password">dinesh123</property>
+	<property name="connection.pool_size">3</property>
+	<property name="current_session_context_class">thread</property>
+	<property name="show_sql">true</property>
+	<property name="format_sql">true</property>
+	
+	<!-- 
+	<property name="hbm2ddl.auto">create</property>
+	 -->
+	
+	<property name="hbm2ddl.auto">create</property>
+	<mapping class="hibernateproject.HibernateProject.Student"/>	
+	<!-- 
+	<mapping class="embedded.Employee"></mapping>	
+	<mapping class="onetomany.QuestionOne"></mapping>
+	<mapping class="onetomany.AnswerToMany"></mapping>
+	<mapping class="manytomany.Emp"></mapping>
+	<mapping class="manytomany.Project"></mapping>
+	<mapping class="onetoone.Question"></mapping>
+	<mapping class="onetoone.Answer"></mapping>
+	
+	<mapping class="studentcertificate.Student"></mapping>
+	<mapping class="studentcertificate.Certificate"></mapping>
+	 <mapping class="inheritancemapping.Employee"/>
+	 <mapping class="inheritancemapping.RegularEmployee"/>
+	 <mapping class="inheritancemapping.ContractEmployee"/>
+	 -->
+	 
+	
+	
+	</session-factory>
+</hibernate-configuration>
+	

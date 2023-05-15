@@ -1,0 +1,45 @@
+package jdbc;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class CustomerDao {
+	String tableName;
+	private JdbcTemplate jdbcTemplate;
+	public String getTableName() {
+		return tableName;
+	}
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+	}
+	public JdbcTemplate getJdbcTemplate() {
+		return jdbcTemplate;
+	}
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	
+	// creating table
+	public void createTable() {
+		String query = "create table customer(id int, name varchar(40), address varchar(40), age int)";
+		jdbcTemplate.execute(query);
+	}
+	
+	// inserting data 
+	public void insertData() {
+		String query = "insert into customer values(101, Dinesh, KeshavNagar, 22)";
+		jdbcTemplate.update(query);		
+	}
+	
+	// deleting data 
+	public void deleteData() {
+		String query = "insert into customer values(101, Dinesh, KeshavNagar, 22)";
+		jdbcTemplate.execute(query);		
+	}
+	
+	// updating data
+	public void updateData() {
+		String query = "insert into customer values(101, Dinesh, KeshavNagar, 22)";
+		jdbcTemplate.execute(query);		
+	}
+
+}
