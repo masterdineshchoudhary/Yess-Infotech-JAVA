@@ -5,6 +5,8 @@ C:\Users\dines\eclipse-workspace\Yess Infotech\.metadata\.plugins\org.eclipse.js
 \JSP\src\main\java
 C:\Users\dines\eclipse-workspace\Yess Infotech\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2799094276.index
 \JSP\src\main\java
+C:\Users\dines\eclipse-workspace\Yess Infotech\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\813006457.index
+\SpringMvcWeb\src\main\resources
 C:\Users\dines\eclipse-workspace\Yess Infotech\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1382049049.index
 \JSP\src\main\java
 C:\Users\dines\eclipse-workspace\Yess Infotech\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3502106390.index
